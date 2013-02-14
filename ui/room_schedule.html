@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>	
+	<head>	 
+		<title>Room Schedule</title>	
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>	 
+		<script type="text/javascript" src="js/knockout-2.1.0.js"></script>	
+		<script type="text/javascript" src="js/viewModel.js"></script>
+		<link type="text/css" rel="stylesheet" charset="UTF-8" href="css/style.css">
+	</head>	
+	
+	<body>
+		<div class="main" data-bind="foreach: roomgroups">
+			<div class="room-group" data-bind="foreach: rooms, visible: isVisible">
+				<section class="room">
+					<p class="room-name" data-bind="text: name"></p>
+					<ul class="room-booking" data-bind="foreach: bookings">
+						<li>
+							<span data-bind="text: starttime"> </span> - 
+							<span data-bind="text: endtime"> </span><br>
+							<span data-bind="text: purpose"> </span>
+						</li>
+					</ul>				
+				</section>
+			</div>		
+		</div>
+	</body>
+</html>
